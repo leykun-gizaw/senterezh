@@ -4,11 +4,11 @@
 }
 
 .u-section-1 .u-sheet-1 {
-  min-height: 636px;
+  min-height: 650px;
 }
 
 .u-section-1 .u-text-1 {
-  margin: 165px auto 0;
+  margin: 100px auto 0;
 }
 
 .u-section-1 .u-text-2 {
@@ -60,6 +60,14 @@
   letter-spacing: 1px;
   margin: 0 auto 0 0;
   padding: 10px 40px;
+}
+
+.fallback { 
+  display: none;
+  
+}
+.no-svg .fallback { 
+  background-image: url(images/logo.png); 
 }
 
 @media (max-width: 1199px) {

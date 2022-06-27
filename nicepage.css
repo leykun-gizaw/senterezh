@@ -15161,7 +15161,7 @@ div.u-video,
   color: inherit;
 }
 .u-nav-container > .u-nav > .u-nav-item > .u-nav-link {
-  padding: 10px 20px;
+  padding: 10px 0px;
 }
 .menu-collapse {
   display: none;
@@ -36656,6 +36656,7 @@ a.u-link.u-text-hover-grey-90:hover {
 
 .u-header .u-menu-1 {
   margin: -32px 0 24px auto;
+
 }
 
 .u-header .u-nav-1 {

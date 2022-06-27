@@ -3,6 +3,7 @@ var board,
     $status = $('#status'),
     $fen = $('#fen'),
     $pgn = $('#pgn');
+    $movehistory = $('#move')
 
 
 /* board visualization and games state handling */
@@ -69,6 +70,7 @@ function updateStatus () {
   $status.html(status)
   $fen.html(game.fen())
   $pgn.html(game.pgn())
+  $movehistory.html(game.history())
 }
 
 var onMouseoverSquare = function(square, piece) {

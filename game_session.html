@@ -40,10 +40,16 @@
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Home.html" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="About.html" style="padding: 10px 20px;">About</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Contact.html" style="padding: 10px 20px;">Contact</a>
-</li></ul>
+            <ul class="u-nav u-unstyled u-nav-1">
+              <!-- <li class="u-nav-item">
+                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Home.html" style="padding: 10px 20px;">Home</a>
+              </li>
+              <li class="u-nav-item">
+                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="About.html" style="padding: 10px 20px;">About</a>
+              </li> -->
+              <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Contact.html" style="padding: 10px 20px;">Resign</a>
+              </li>
+            </ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
@@ -67,7 +73,12 @@
               <div class="u-align-left u-container-style u-layout-cell u-size-9 u-layout-cell-1">
                 <div class="u-container-layout u-valign-top u-container-layout-1">
                   
-                  <div class="u-expanded-width u-grey-70 u-preserve-proportions u-radius-15 u-shape u-shape-round u-shape-1" style="width: 100%"><span style="padding: 5px">Chat room</span>
+                  <div class="u-expanded-width u-grey-70 u-preserve-proportions  u-shape  u-shape-1" style="width: 100%">
+                    <div class="chatbox">
+                    <label>Chatroom</label>
+                    <div id="text_messages"></div>
+                    </div>
+                    
                   </div>
                
                 </div>
@@ -82,7 +93,29 @@
               <div class="u-align-left u-container-style u-layout-cell u-size-12 u-layout-cell-3">
                 <div class="u-container-layout u-valign-top u-container-layout-3">
                   
-                    <div class="u-expanded-width u-grey-70 u-preserve-proportions u-radius-15 u-shape u-shape-round u-shape-1" style="width: 100%"><span style="padding: 5px">Moves</span>
+                    <div class="user-timer1">
+                      <span style="font-size: 25px">00:00</span>
+                      <span>Player 1</span>
+                      <div class="user-flag">
+                        <img src="img/flags/et.svg" class="flagsvg" alt="user_flag">
+                      </div>
+                    </div>
+                    <div class="u-expanded-width u-grey-70 u-preserve-proportions  u-shape  u-shape-1" style="width: 100%">
+                      <div class="game_status">
+                        <label>Status:</label>
+                        <div id="status"></div>
+                        <label>Moves:</label>
+                        <div id="move"></div>
+                      </div>
+                      
+
+                  </div>
+                  <div class="user-timer2">
+                      <span style="font-size: 25px">00:00</span>
+                      <span>Player 2</span>
+                      <div class="user-flag">
+                        <img src="img/flags/er.svg" class="flagsvg" alt="user_flag">
+                      </div>
                   </div>
 
                  
@@ -96,10 +129,18 @@
     
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-0465"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">Senterezh</p>
+        <p class="u-small-text u-text u-text-variant u-text-1">Sample text. Click to select the Text Element.</p>
       </div></footer>
     <section class="u-backlink u-clearfix u-grey-80">
-     
+      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+        <span>Website Templates</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="" target="_blank">
+        <span>Website Builder Software</span>
+      </a>. 
     </section>
     <script src="chess/lib/jquery/jquery-3.2.1.min.js"></script>
     <script src="chess/lib/chessboardjs/js/chess.js"></script>
