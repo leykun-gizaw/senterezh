@@ -7,7 +7,7 @@
   "npm": ">=7.0.0",
   "scripts": {
     "build": "webpack --config webpack.config.js --mode production",
-    "start": "python ./app/app.py"
+    "start": "python app.py"
   },
   "keywords": [],
   "author": "",
