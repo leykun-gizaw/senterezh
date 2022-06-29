@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <title>guest game</title>
+  </head>
+  <body>
+    <header>
+      <img src="./src/img/logo1.svg" alt="logo" class="logo" />
+      <div>
+        <a href="#" class="cta"><button>Sign in</button></a>
+        <a href="#" class="cta"><button>Register</button></a>
+      </div>
+    </header>
+    <main>
+      <section class="chat_box">
+        <div><p>Chat room</p></div>
+        <div class="chat_history"></div>
+        <div class="chat_text">
+          <input type="text" name="chat" id="c_text" placeholder="chat here">
+        </div>
+      </section>
+      <section class="gameplay_section">
+        <div id="board1"></div>
+      </section>
+      <section class="info">
+        <div class="guest_time">30:00</div>
+        <div class="history_box">
+          <table id="history">
+            <tbody></tbody>
+        </table>
+        </div>
+        <div class="own_time">30:00</div>
+      </section>
+    </main>
+    <script src="./dist/guest.js"></script>
+  </body>
+</html>

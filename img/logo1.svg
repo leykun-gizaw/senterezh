@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="160.586 5.883 236.793 467.54"
+   version="1.1"
+   id="svg10"
+   sodipodi:docname="logo1.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs14" />
+  <sodipodi:namedview
+     id="namedview12"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="1.8629422"
+     inkscape:cx="117.82437"
+     inkscape:cy="235.38036"
+     inkscape:window-width="1680"
+     inkscape:window-height="1050"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg10" />
+  <path
+     d="M5159 8214 c-13 -15 -48 -44 -76 -66 -55 -40 -65 -66 -43 -108 15 -27 81 -46 109 -31 37 20 26 -17 -19 -61 -37 -37 -43 -40 -82 -35 -25 3 -51 15 -66 30 -24 25 -24 25 -3 32 38 12 27 48 -24 73 -52 25 -55 26 -55 11 0 -6 -9 -24 -20 -39 -25 -36 -17 -60 21 -60 36 0 36 -11 1 -51 -21 -24 -38 -32 -75 -36 -44 -5 -49 -3 -84 33 l-38 39 49 5 c31 4 53 13 62 25 15 20 18 63 6 81 -8 13 -183 96 -189 90 -8 -8 151 -462 168 -481 18 -18 43 -20 366 -32 329 -12 349 -12 365 5 17 16 208 453 208 473 0 5 -10 3 -22 -5 -13 -7 -53 -23 -89 -35 -92 -30 -104 -41 -100 -93 2 -31 38 -58 76 -58 43 0 44 -8 5 -45 -54 -52 -139 -34 -176 37 -15 30 -15 31 4 26 24 -7 52 8 52 28 0 12 -24 69 -35 82 -3 4 -78 -29 -92 -40 -16 -13 1 -48 22 -48 8 0 15 -4 15 -8 0 -11 -74 -52 -94 -52 -30 0 -76 30 -96 63 -26 42 -26 61 -1 47 34 -18 80 -12 106 15 40 39 32 59 -52 141 -43 40 -78 74 -78 74 -1 0 -12 -12 -26 -26z"
+     transform="matrix(0.1, 0, 0, -0.1, -221.684845, 829.883118)"
+     id="path2"
+     style="fill:#ffffff" />
+  <path
+     d="M4531 7855 c-46 -122 -52 -215 -21 -305 10 -30 18 -55 17 -56 -1 -1 -24 -13 -52 -27 -99 -50 -129 -95 -139 -204 -11 -123 -67 -245 -173 -375 -58 -72 -103 -111 -201 -177 -104 -70 -123 -122 -76 -215 49 -98 128 -152 239 -163 81 -8 119 3 177 52 68 59 126 79 279 99 210 26 272 62 335 192 26 54 41 74 52 72 43 -8 76 -163 60 -282 -16 -124 -97 -238 -240 -339 -36 -26 -170 -101 -298 -167 -332 -172 -431 -246 -485 -362 -64 -137 -29 -303 105 -507 l54 -81 803 0 802 0 69 81 c160 187 260 419 313 725 27 155 32 442 10 594 -29 204 -92 414 -176 580 -113 225 -312 447 -470 526 -96 47 -184 63 -414 74 -191 9 -301 26 -324 49 -7 6 -55 69 -107 138 -52 70 -100 129 -107 131 -6 1 -21 -22 -32 -53z"
+     transform="matrix(0.1, 0, 0, -0.1, -221.684845, 829.883118)"
+     id="path4"
+     style="fill:#ffffff" />
+  <path
+     d="M4135 4900 c-173 -19 -292 -131 -311 -293 -8 -70 22 -176 64 -227 l30 -35 1030 0 c1016 0 1030 0 1052 20 72 65 101 220 61 326 -45 120 -152 194 -298 210 -98 10 -1533 9 -1628 -1z"
+     transform="matrix(0.1, 0, 0, -0.1, -221.684845, 829.883118)"
+     id="path6"
+     style="fill:#ffffff" />
+  <text
+     style="fill:#ffffff;font-family:Arial, sans-serif;font-size:28px;font-weight:700;white-space:pre;opacity:0.9"
+     transform="matrix(1.386713, 0, 0, 2.407798, -5009.46851, 10486.11998)"
+     x="3729.47"
+     y="-4164.41"
+     id="text8">SENTEREZH</text>
+</svg>
