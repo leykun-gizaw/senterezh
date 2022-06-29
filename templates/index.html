@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <title>Senterezh</title>
+  </head>
+  <body>
+    <header>
+      <img src="../src/img/logo1.svg" alt="logo" class="logo" />
+      <div>
+        <a href="#" class="cta"><button>Sign in</button></a>
+        <a href="#" class="cta"><button>Register</button></a>
+      </div>
+    </header>
+    <main>
+      <section class="home_section1">
+        <article class="home_greet">
+          <h1>Senterezh</h1>
+          <p>Play chess online!</p>
+          <div class="home_auth-buttons">
+            <a href="#" class="cta">
+              <button>Sign in</button>
+            </a>
+            <a href="#" class="cta">
+              <button>Register</button>
+            </a>
+          </div>
+        </article>
+        <article class="home_play">
+          <div class="div_btn" id="1_min_game">
+            <div>
+              <p>1 min</p>
+              <p>Bullet</p>
+            </div>
+          </div>
+          <div class="div_btn" id="2_min_game">
+            <div>
+              <p>2 min</p>
+              <p>Bullet</p>
+            </div>
+          </div>
+          <div class="div_btn" id="3_min_game">
+            <div>
+              <p>3 min</p>
+              <p>Bullet</p>
+            </div>
+          </div>
+          <div class="div_btn" id="5_min_game">
+            <div>
+              <p>5 min</p>
+              <p>Blitz</p>
+            </div>
+          </div>
+          <div class="div_btn" id="10_min_game">
+            <div>
+              <p>10 min</p>
+              <p>Rapid</p>
+            </div>
+          </div>
+          <div class="div_btn" id="15_min_game">
+            <div>
+              <p>15 min</p>
+              <p>Rapid</p>
+            </div>
+          </div>
+          <div class="div_btn" id="30_min_game">
+            <div>
+              <p>30 min</p>
+              <p>Classical</p>
+            </div>
+          </div>
+          <div class="div_btn" id="1_hr_game">
+            <div>
+              <p>1 hour</p>
+              <p>Classical</p>
+            </div>
+          </div>
+          <div class="div_btn">
+            <div>
+              <p>Custom</p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="home_section2">
+        <article class="home_leg-game-1">
+            <div class="player-1">player1</div>
+            <div class="player-2">player2</div>
+            <div id="board1"></div>
+        </article>
+        <article class="home_leaderboard">
+          <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Leaderboard</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>with two columns</td>
+                    <td>with two columns</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>with two columns</td>
+                    <td>with two columns</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>with two columns</td>
+                    <td>with two columns</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>with two columns</td>
+                    <td>with two columns</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>with two columns</td>
+                    <td>with two columns</td>
+                </tr>
+            </tbody>
+        </table>
+        </article>
+        <article class="home_leg-game-2">
+            <div class="player-3">player3</div>
+            <div class="player-4">player4</div>
+          <div id="board2"></div>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <p>This is the footer</p>
+    </footer>
+    <script src="{{ url_for('static', filename="home.js") }}"></script>
+  </body>
+</html>
