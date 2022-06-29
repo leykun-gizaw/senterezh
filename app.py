@@ -2,6 +2,7 @@
 """Module defines a flask app
 """
 from flask import Flask, render_template
+from os import environ
 
 app = Flask(__name__)
 
@@ -19,5 +20,5 @@ def guest():
 if __name__ == "__main__":
     app.run(
         host='localhost',
-        port=5000
+        port=int(environ.get('PORT') or 5000)
     )
