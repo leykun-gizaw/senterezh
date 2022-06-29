@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "node": ">=15.0.0",
+  "npm": ">=7.0.0",
   "scripts": {
     "build": "webpack --config webpack.config.js --mode production"
   },
