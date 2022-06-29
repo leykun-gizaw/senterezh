@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 # ignore node_modules
 node_modules/
+static/
