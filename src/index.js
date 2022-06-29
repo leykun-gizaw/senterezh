@@ -21,7 +21,13 @@ function makeRandomMove1() {
   window.setTimeout(makeRandomMove1, 500);
 }
 
-board1 = Chessboard('board1', 'start');
-board2 = Chessboard('board2', 'start');
+const config = {
+  draggable: true,
+  position: 'start',
+};
+config.pieceTheme = '/static/img/chesspieces/wikipedia/{piece}.png'
+
+board1 = Chessboard('board1', config);
+board2 = Chessboard('board2', config);
 
 window.setTimeout(makeRandomMove1, 500);

@@ -96,5 +96,5 @@ const config = {
   onDrop,
   onSnapEnd,
 };
+config.pieceTheme = '/static/img/chesspieces/wikipedia/{piece}.png'
 board = Chessboard("board1", config);
-console.log(game.pgn());
