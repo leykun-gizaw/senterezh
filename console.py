@@ -54,6 +54,7 @@ class SenterezhConsole(cmd.Cmd):
             print("** class doesn't exist **")
             return
         new_instance = SenterezhConsole.classes[line]()
+        storage.new(new_instance)
         storage.save()
         print(new_instance.id)
 
