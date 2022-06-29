@@ -90,6 +90,21 @@
 }
 .chatbox {
 margin: 10px;
+position: absolute;
+}
+::placeholder {
+  color: grey;
+}
+.text_messages {
+  position: absolute;
+  margin-left: 20px;
+  bottom: 50px;
+}
+
+.message_input{
+position: absolute;
+bottom: 0;
+right: 0;
 }
 
 @media (max-width: 1199px) {
