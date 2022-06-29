@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <img src="./src/img/logo1.svg" alt="logo" class="logo" />
+      <img src="../src/img/logo1.svg" alt="logo" class="logo" />
       <div>
         <a href="#" class="cta"><button>Sign in</button></a>
         <a href="#" class="cta"><button>Register</button></a>
@@ -137,6 +137,6 @@
     <footer>
       <p>This is the footer</p>
     </footer>
-    <script src="./dist/home.js"></script>
+    <script src="{{ url_for('static', filename="home.js") }}"></script>
   </body>
 </html>
