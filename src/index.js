@@ -31,3 +31,28 @@ board1 = Chessboard('board1', config);
 board2 = Chessboard('board2', config);
 
 window.setTimeout(makeRandomMove1, 500);
+
+// Handle click events to go in gaming
+const homePlay = document.getElementById('play_btns_container');
+homePlay.addEventListener('click', (event) => {
+  const isButton = event.target.nodeName === 'BUTTON';
+  if (isButton === true) {
+    const gameInterval = event.target.innerText.split('\n')[0];
+    event.target.innerHTML = '<div class="loading"></div>';
+    fetch('/', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({ gameInterval }),
+    })
+      .then((response) => {
+        if (response.redirected === true) {
+          window.location.href = response.url;
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+});
