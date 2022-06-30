@@ -11,8 +11,8 @@
     <header>
       <img src="static/img/logo1.svg" alt="logo" class="logo" />
       <div>
-        <a href="#" class="cta"><button>Sign in</button></a>
-        <a href="#" class="cta"><button>Register</button></a>
+        <a href="#" class="cta"><button class="auth_btn">Sign in</button></a>
+        <a href="#" class="cta"><button class="auth_btn">Register</button></a>
       </div>
     </header>
     <main>
@@ -22,67 +22,49 @@
           <p>Play chess online!</p>
           <div class="home_auth-buttons">
             <a href="#" class="cta">
-              <button>Sign in</button>
+              <button class="auth_btn">Sign in</button>
             </a>
             <a href="#" class="cta">
-              <button>Register</button>
+              <button class="auth_btn">Register</button>
             </a>
           </div>
         </article>
-        <article class="home_play">
-          <div class="div_btn" id="1_min_game">
-            <div>
-              <p>1 min</p>
-              <p>Bullet</p>
-            </div>
-          </div>
-          <div class="div_btn" id="2_min_game">
-            <div>
-              <p>2 min</p>
-              <p>Bullet</p>
-            </div>
-          </div>
-          <div class="div_btn" id="3_min_game">
-            <div>
-              <p>3 min</p>
-              <p>Bullet</p>
-            </div>
-          </div>
-          <div class="div_btn" id="5_min_game">
-            <div>
-              <p>5 min</p>
-              <p>Blitz</p>
-            </div>
-          </div>
-          <div class="div_btn" id="10_min_game">
-            <div>
-              <p>10 min</p>
-              <p>Rapid</p>
-            </div>
-          </div>
-          <div class="div_btn" id="15_min_game">
-            <div>
-              <p>15 min</p>
-              <p>Rapid</p>
-            </div>
-          </div>
-          <div class="div_btn" id="30_min_game">
-            <div>
-              <p>30 min</p>
-              <p>Classical</p>
-            </div>
-          </div>
-          <div class="div_btn" id="1_hr_game">
-            <div>
-              <p>1 hour</p>
-              <p>Classical</p>
-            </div>
-          </div>
-          <div class="div_btn">
-            <div>
-              <p>Custom</p>
-            </div>
-          </div>
+        <article class="home_play" id="play_btns_container">
+          <button class="play_btn">
+              1 min<br/>
+              Bullet
+          </button>
+          <button class="play_btn">
+              2 min<br />
+              Bullet
+          </button>
+          <button class="play_btn">
+              3 min<br />
+              Bullet
+          </button>
+          <button class="play_btn">
+              5 min<br />
+              Blitz
+          </button>
+          <button class="play_btn">
+              10 min<br />
+              Rapid
+          </button>
+          <button class="play_btn">
+              15 min<br />
+              Rapid
+          </button>
+          <button class="play_btn">
+              30 min<br />
+              Classical
+          </button>
+          <button class="play_btn">
+              1 hour<br />
+              Classical
+          </button>
+          <button class="play_btn">
+              Custom
+          </button>
         </article>
       </section>
       <section class="home_section2">

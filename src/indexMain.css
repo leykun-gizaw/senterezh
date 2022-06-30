@@ -29,10 +29,6 @@ main {
     margin: auto;
 }
 
-/* main section { */
-/*     border: 1px solid grey; */
-/* } */
-
 .home_section1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -69,27 +65,42 @@ main {
     row-gap: 10px;
 }
 
-.home_section1 .home_play .div_btn {
+.home_section1 .home_play .play_btn {
     cursor: pointer;
-    transition: all 0.1s ease 0s;
+    transition: all 0.2s ease 0s;
     background-color: rgb(50, 50, 50);
     height: 200px;
+    color: white;
+    border: 1px solid grey;
+    font-size: xx-large;
 }
 
-.home_section1 .home_play .div_btn div {
-    padding: 5px;
-    width: fit-content;
-    height: fit-content;
-    margin: 25% auto;
-}
-
-.home_section1 .home_play .div_btn div p{
-    width: fit-content;
-    font-size: 30px;
-}
-
-.home_section1 .home_play div:hover {
+.home_section1 .home_play .play_btn:hover {
     background-color: rgba(0, 136, 169, 1);
+}
+.home_section1 .home_play .play_btn:active {
+    transform: scale(0.95);
+}
+
+.home_section1 .home_play .play_btn .loading {
+    display: flex;
+    justify-content: center;
+}
+.home_section1 .home_play .play_btn .loading::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border: 5px solid transparent;
+    border-top-color: white;
+    border-bottom-color: white;
+    border-radius: 50%;
+    animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(1turn);
+    }
 }
 
 .home_section2 {

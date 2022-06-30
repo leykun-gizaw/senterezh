@@ -1,15 +1,22 @@
 #!/usr/bin/env python3
 """Module defines a flask app
 """
-from flask import Flask, render_template
+from time import sleep
+from flask import Flask, render_template, request, jsonify, redirect
 from os import environ
 
 app = Flask(__name__, static_url_path='/static')
 
 
-@app.route('/')
+@app.route('/', methods=["GET", "POST"])
 def home():
-    return render_template('index.html')
+    if request.method == "GET":
+        return render_template('index.html')
+    jsonData = request.get_json()
+    print(jsonData)
+    if request.method == "POST":
+        sleep(10)
+        return redirect('/guest', code=302)
 
 
 @app.route('/guest')
