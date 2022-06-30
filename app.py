@@ -19,6 +19,6 @@ def guest():
 
 if __name__ == "__main__":
     app.run(
-        host='localhost',
+        host='0.0.0.0',
         port=int(environ.get('PORT') or 5000)
     )
