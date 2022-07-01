@@ -96,5 +96,45 @@ const config = {
   onDrop,
   onSnapEnd,
 };
-config.pieceTheme = '/static/img/chesspieces/wikipedia/{piece}.png'
+config.pieceTheme = '/static/img/chesspieces/wikipedia/{piece}.png';
 board = Chessboard("board1", config);
+
+// Setup socketio
+const socket = io();
+
+socket.on('connect', () => {
+  socket.send('User has connected');
+});
+
+socket.on('connected', (msg) => {
+  const path = window.location.pathname.split('/');
+  const room = path[path.length - 1];
+  socket.emit('join', { room });
+});
+
+socket.on('room joined', (msg) => {
+  console.log(msg);
+});
+
+const chatBox = document.getElementById('c_text');
+const history = document.getElementById('c_history');
+chatBox.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    const path = window.location.pathname.split('/');
+    const room = path[path.length - 1];
+    socket.emit('communicate', { data: chatBox.value, sid: socket.id, room });
+
+    const me = document.createElement('p');
+    me.innerHTML = `me => ${chatBox.value}`;
+    history.appendChild(me);
+  }
+});
+
+socket.on('response', (msg) => {
+  if (msg.sid !== socket.id) {
+    const opponent = document.createElement('p');
+    opponent.innerHTML = `opponent => ${msg.data}`;
+    history.appendChild(opponent);
+    console.log(socket.id);
+  }
+});
