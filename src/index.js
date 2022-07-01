@@ -25,7 +25,7 @@ const config = {
   draggable: true,
   position: 'start',
 };
-config.pieceTheme = '/static/img/chesspieces/wikipedia/{piece}.png'
+config.pieceTheme = '/static/img/chesspieces/wikipedia/{piece}.png';
 
 board1 = Chessboard('board1', config);
 board2 = Chessboard('board2', config);

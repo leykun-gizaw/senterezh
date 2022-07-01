@@ -47,7 +47,7 @@ main .chat_box div {
     border: 1px solid grey;
 }
 
-main .chat_box div p {
+main .chat_box div h6 {
     padding: 10px;
     text-align: center;
 }
