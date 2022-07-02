@@ -5,7 +5,6 @@
 from os import environ
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
-
 from models.base_model import BaseModel, Base
 from models.user import User
 from models.game import Game
@@ -34,7 +33,7 @@ class DBStorage:
         dct = {}
 
         if not cls:
-            classes = [User, State, City, Amenity, Place, Review]
+            classes = [User, Game]
         else:
             if type(cls) == str:
                 cls = eval(csl)
