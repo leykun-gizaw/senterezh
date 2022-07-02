@@ -58,15 +58,24 @@ def signup():
     return render_template('signup.html')
 
 
-@app.route('/signin', methods=['GET', ['POST']])
+@app.route('/signin', methods=['GET', 'POST'])
 def signin():
     if request.method == 'POST':
         user_name = request.form['user_name']
         password = request.form['password']
-        hashed_password = ""    # to be queried from database
+        users = storage.all(User).values()
+        hashed_password = None
+        for user in users:
+            if user.user_name == 'user_name':
+                hashed_password = user.password
+        if not hashed_password:
+            message = "incorrect user name"
+        print(hashed_password)
         if not bcrypt.checkpw(password.encode('utf-8'), hashed_password):
+            message="Incorrect password"
             flash('Incorrect password')
         else:
+            message="Authentication success"
             redirect(url_for('index'))
     return render_template('signin.html')
 
