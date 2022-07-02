@@ -17,12 +17,16 @@ def signup():
         last_name = request.form['last_name']
         user_name = request.form['user_name']
         password = request.form['password']
+        age = request.form['age']
+        email = request.form['email']
         usr = User()
         usr.first_name = first_name
         usr.last_name = last_name
         usr.user_name = user_name
         usr.password = bcrypt.hashpw(password.encode('utf-8'),
                                      bcrypt.gensalt())
+        usr.email = email
+        usr.age = age
         storage.new(usr)
         storage.save()
     return render_template('signup.html')
