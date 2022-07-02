@@ -16,6 +16,7 @@ class User(BaseModel, Base):
     if storage_type == 'db':
         first_name = Column(String(20), nullable=False)
         last_name = Column(String(20), nullable=False)
+        user_name = Column(String(20), nullable=False)
         birth_date = Column(DateTime, nullable=False)
         email = Column(String(30), nullable=False)
         password = Column(String(128), nullable=False)
