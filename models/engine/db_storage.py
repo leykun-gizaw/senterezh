@@ -5,7 +5,6 @@
 from os import environ
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
-from sqlalchemy_utils import database_exists, create_database
 
 from models.base_model import BaseModel, Base
 from models.user import User
@@ -26,8 +25,6 @@ class DBStorage:
         env = environ.get('SENTEREZH_ENV')
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.format(
                                       user, pwd, host, db), pool_pre_ping=True)
-        if not database_exists(self.__engine.url):
-            create_database(self.__engine.url)
         if env == "test":
             Base.metadata.drop_all(bind=self.__engine)
 
