@@ -16,9 +16,9 @@ body {
     font-family: 'Monserrat', sans-serif;
     font-weight: 500;
     color: white;
-    background-image: url('../static/img/hero_background\(1200\).jpg');
+    /* background-image: url('../static/img/hero_background\(1200\).jpg'); */
     background-color:rgb(30, 30, 30);
-    background-blend-mode:overlay;
+    /* background-blend-mode:overlay; */
 }
 
 main {
@@ -40,7 +40,7 @@ main {
 }
 
 .home_section1 .home_greet h1{
-    font-size: 60px;
+    font-size: 100px;
     text-align: center;
 }
 

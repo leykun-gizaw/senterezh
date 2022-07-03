@@ -1,140 +1,107 @@
-/* eslint-disable quotes */
-import "./header.css";
-import "./guestMain.css";
-import "jquery";
-import "@chrisoakman/chessboardjs/dist/chessboard-1.0.0.min";
-import { Chess } from "chess.js";
+import './header.css';
+import './guestMain.css';
+import 'jquery';
+import '@chrisoakman/chessboardjs/dist/chessboard-1.0.0.min';
+import { Chess } from 'chess.js';
+import updateHistory from './history';
 
 let board = null;
-const game = new Chess();
-
-function onDragStart(source, piece, position, orientation) {
-  // do not pick up pieces if the game is over
-  if (game.game_over()) return false;
-
-  // only pick up pieces for the side to move
-  if (
-    (game.turn() === "w" && piece.search(/^b/) !== -1) ||
-    (game.turn() === "b" && piece.search(/^w/) !== -1)
-  ) {
-    return false;
-  }
-  return true;
-}
-
-function updateStatus() {
-  let status = "";
-
-  let moveColor = "White";
-  if (game.turn() === "b") {
-    moveColor = "Black";
-  }
-
-  // checkmate?
-  if (game.in_checkmate()) status = `Game over ${moveColor} is in checkmate.`;
-
-  // draw?
-  else if (game.in_draw()) status = "Game over, drawn position";
-
-  // game still on
-  else {
-    status = `${moveColor} to move`;
-
-    // check?
-    if (game.in_check()) {
-      status += `, ${moveColor} is in check`;
-    }
-  }
-  const rows = document.getElementById('history').firstElementChild;
-
-  const movesArray = game.pgn(
-    { max_width: 2, newline_char: '\n' },
-  ).split('\n').map((move) => move.split(' '));
-
-  const row = document.createElement('tr');
-  if (rows.lastElementChild) {
-    if (movesArray[movesArray.length - 1][0] === rows.lastElementChild.firstElementChild.innerHTML) {
-      rows.lastElementChild.remove();
-    }
-  }
-  movesArray[movesArray.length - 1].forEach((move) => {
-    const data = document.createElement('td');
-    if (movesArray[movesArray.length - 1][0] === move) {
-      data.classList.add('count');
-    }
-    data.innerHTML = move;
-    row.appendChild(data);
-  });
-  rows.append(row);
-}
-
-function onDrop(source, target) {
-  // see if the move is legal
-  const move = game.move({
-    from: source,
-    to: target,
-    promotion: "q", // NOTE: always promote to a queen for example simplicity
-  });
-
-  // illegal move
-  if (move === null) return "snapback";
-
-  updateStatus();
-  return '';
-}
-
-// update the board position after the piece snap
-// for castling, en passant, pawn promotion
-function onSnapEnd() {
-  board.position(game.fen());
-}
-
-const config = {
-  draggable: true,
-  position: "start",
-  onDragStart,
-  onDrop,
-  onSnapEnd,
-};
-config.pieceTheme = '/static/img/chesspieces/wikipedia/{piece}.png';
-board = Chessboard("board1", config);
+export const game = new Chess();
 
 // Setup socketio
-const socket = io();
+export const socket = io();
 
+const pathArray = window.location.pathname.split('/');
+const roomAndInterval = pathArray[pathArray.length - 1].split('_');
+
+// Get the room uuid and game interval
+const room = roomAndInterval[roomAndInterval.length - 1];
+const gameInterval = roomAndInterval[0].replace('%20', ' ');
+
+// Just setting up a socketio connection from the client side
 socket.on('connect', () => {
-  socket.send('User has connected');
+  socket.send('User connected');
 });
 
-socket.on('connected', (msg) => {
-  const path = window.location.pathname.split('/');
-  const room = path[path.length - 1];
-  socket.emit('join', { room });
+/*
+ * When the server acknowledges the connection setup above,
+ * we extract the room uuid sent from /guest endpoint of the server.
+ * We then send that through the socket attached to the `join`
+ * event. Server will setup a room with that uuid.
+ */
+socket.on('connected', () => {
+  socket.emit('join', { room, gameInterval });
 });
 
+/*
+ * Log the acknowldegement message sent from the server regarding
+ * our request to join a room with a uuid the server sent through
+ * the url path
+ */
 socket.on('room joined', (msg) => {
-  console.log(msg);
+  if (msg.sid === socket.id) board.orientation(msg.orientation);
 });
 
+/*
+ * Capture the chatbox and the history area and add an Enter key
+ * event listener. Then upon the keypress event, we send a socketio
+ * message attached to `communicate` event. The message contains
+ * the chatbox value, the socket id of the client, and the room uuid
+ * all required by the backend to handle room messaging.
+ */
 const chatBox = document.getElementById('c_text');
 const history = document.getElementById('c_history');
 chatBox.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
-    const path = window.location.pathname.split('/');
-    const room = path[path.length - 1];
-    socket.emit('communicate', { data: chatBox.value, sid: socket.id, room });
-
+    socket.emit('communicate', { data: chatBox.value, room });
     const me = document.createElement('p');
     me.innerHTML = `me => ${chatBox.value}`;
     history.appendChild(me);
   }
 });
 
+/*
+ * Listen to returning messages from the connected room and append
+ * to the chat history box
+ */
 socket.on('response', (msg) => {
   if (msg.sid !== socket.id) {
     const opponent = document.createElement('p');
     opponent.innerHTML = `opponent => ${msg.data}`;
     history.appendChild(opponent);
-    console.log(socket.id);
   }
 });
+
+function updateStatus() {
+  updateHistory(game);
+}
+
+/*
+ * Listen to returning messages from the connected room and change
+ * board position according to server's response.
+ */
+socket.on('fen response', (msg) => {
+  if (msg.sid !== socket.id) {
+    console.log(msg);
+    board.position(msg.fenString);
+  }
+});
+
+// update the board position after the piece snap
+// for castling, en passant, pawn promotion
+function onSnapEnd() {
+  board.position(board.fen());
+  socket.emit('fen exchange', { room, fenString: board.fen() });
+}
+
+const config = {
+  draggable: true,
+  position: 'start',
+  onSnapEnd,
+};
+// Change default location of chesspieces to start with `/static`
+config.pieceTheme = '/static/img/chesspieces/wikipedia/{piece}.png';
+
+board = Chessboard('board1', config);
+
+updateStatus();
