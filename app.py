@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
 """Module defines a flask app
 """
-from time import sleep
-from flask import Flask, flash, render_template, redirect, request, jsonify, url_for
+from flask import (
+    Flask,
+    flash,
+    render_template,
+    redirect,
+    request,
+    url_for
+)
 from flask_socketio import SocketIO, emit, join_room
 from uuid import uuid4
 from copy import deepcopy
@@ -45,6 +51,7 @@ def home():
             '/guest/{:s}_{:s}'.format(interval, room), code=302
         )
 
+
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
@@ -67,7 +74,7 @@ def signup():
     return render_template('signup.html')
 
 
-@app.route('/signin', methods=['GET', ['POST']])
+@app.route('/signin', methods=['GET', 'POST'])
 def signin():
     if request.method == 'POST':
         user_name = request.form['user_name']
@@ -78,6 +85,7 @@ def signin():
         else:
             redirect(url_for('index'))
     return render_template('signin.html')
+
 
 @app.route('/guest/<room>')
 def guest(room):
