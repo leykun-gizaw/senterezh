@@ -20,4 +20,12 @@
 ### whats with the name?
 The name is derived from its equivalent sounding word in its parent language Amharic. It means table. Senterezh was played by Ethiopian royalty in the old days. It has all the rules of chess except for the turns players take with some regional variations on how the pieces move. Check this wiki to [learn more](https://en.wikipedia.org/wiki/Senterej).
 
+### How to play it?
+Chess is one of the world's most popular games, played by millions of people worldwide. It is an abstract strategy game and involves no hidden information. To learn the basics of chess check [this site](https://lichess.org/learn#/).
+### Authors
+This is a list of individuals havinig contributed content to the repository.
+*  [Leykun Gizaw](https://github.com/Bisrat-Aregawi)
+*  [Leul Yiheyis](https://github.com/leulyk)
+*  [Henock Adane](https://github.com/Henock-Adane)
+
 <a href="http://senterezh.bakxy.tech" target="_blank">See live</a>
